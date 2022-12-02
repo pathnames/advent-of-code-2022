@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.Collections;
 import java.util.Scanner;
 import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         try {
@@ -19,7 +20,9 @@ public class Main {
                     sum += Integer.parseInt(data);
                 }
             }
-            System.out.println(Collections.max(sums));
+            System.out.println("Solution 1: " + Collections.max(sums));
+            Collections.sort(sums, Collections.reverseOrder());
+            System.out.println("Solution 2: " + (sums.get(0) + sums.get(1) + sums.get(2)));
             myReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
